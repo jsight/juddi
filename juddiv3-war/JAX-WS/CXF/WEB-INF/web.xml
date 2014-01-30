@@ -34,12 +34,11 @@
   </context-param>
 
   <listener>
-    <listener-class>
-      org.springframework.web.context.ContextLoaderListener
-		</listener-class>
-		 <!-- this class setups the encryption key for the session-->
-    <listener-class>org.apache.juddi.adminconsole.StartupServlet</listener-class>
-    
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <listener>
+    <!-- this class setups the encryption key for the session-->
+    <listener-class>org.apache.juddi.adminconsole.StartupServlet</listener-class> 
   </listener>
 
   <servlet>
@@ -78,14 +77,7 @@
   	<servlet-name>NotifyServlet</servlet-name>
   	<url-pattern>/notify/*</url-pattern>
   </servlet-mapping>
- 
-  <resource-ref>
-      <description>jUDDI DataSource</description>
-      <res-ref-name>jdbc/juddiDB</res-ref-name>
-      <res-type>javax.sql.DataSource</res-type>
-      <res-auth>Container</res-auth>
-      <res-sharing-scope>Shareable</res-sharing-scope>
-  </resource-ref>
+
   <security-constraint>
       <display-name>jUDDI Admin content</display-name>
       <web-resource-collection>

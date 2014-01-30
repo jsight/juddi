@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jboss-deployment-structure>
   <deployment>
+    <exclude-subsystems>  
+      <subsystem name="jaxr" />  
+      <subsystem name="jaxrs" />  
+      <subsystem name="webservices" />  
+    </exclude-subsystems>
     <dependencies>
       <module name="org.jboss.as.jpa.openjpa" />
       <module name="org.jboss.ws.cxf.jbossws-cxf-server" />
