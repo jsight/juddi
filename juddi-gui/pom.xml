@@ -170,4 +170,27 @@ language governing permissions and * limitations under the License. * */ -->
         	</plugins>
         </pluginManagement>
     </build>
+    <profiles>
+        <profile>
+            <id>openjpa-jboss7up</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-war-plugin</artifactId>
+                        <configuration>
+                            <webResources>
+                                <resource>
+                                    <directory>AS7</directory>
+                                </resource>
+                            </webResources>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>

@@ -333,8 +333,9 @@ public class UddiHub implements Serializable {
                                         log.warn("'UDDI_AUTH' is not defined in the config (" + PROP_AUTH_TYPE + ")! defaulting to UDDI_AUTH");
                                         style = AuthStyle.UDDI_AUTH;
                                 }
-                                if (nodename == null) {
-                                        nodename = clientConfig.getConfiguration().getString(PROP_CONFIG_NODE);
+                                String newNodename = clientConfig.getConfiguration().getString(PROP_CONFIG_NODE);
+                                if (newNodename != null && !newNodename.equals("")) {
+                                        nodename = newNodename;
                                 }
                                 if (nodename == null || nodename.equals("")) {
                                         log.warn("'node' is not defined in the config! defaulting to 'default'");
